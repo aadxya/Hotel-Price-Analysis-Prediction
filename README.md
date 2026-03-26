@@ -21,19 +21,20 @@ The approach focuses on **interpretable analysis and practical insights**, refle
 ```
 hotel-pricing-analysis/
 │
-├── data/
+├── Dataset/
 │   ├── raw.csv
 │   ├── daily_yoy.csv
 │   ├── Feb2015.csv
 │   ├── FebComplete.csv
 │   └── Weekday.csv
 │
-├── notebooks/
+├── Codes/
 │   ├── Q1_Visualisations.ipynb
 │   ├── Q2_Outliers.ipynb
-│   └── Q3_Predicting.ipynb
+│   ├──Q3_Predicting.ipynb
+│   └── Data_Transformation.sql
 │
-├── images/
+├── Plots/
 │   ├── yoy_plot.png
 │   ├── outliers_plot.png
 │   └── feb_prediction.png
