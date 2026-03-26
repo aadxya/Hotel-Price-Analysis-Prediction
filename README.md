@@ -10,6 +10,10 @@ This project analyzes hotel pricing data from **2012–2015** to understand pric
 
 The approach focuses on **interpretable analysis and practical insights**, reflecting real-world pricing systems.
 
+## Dataset PreparatioN
+
+- Data was cleaned and processed using SQL
+- All the datasets for each notebook was prepared using SQL
 ---
 
 ## Project Structure
