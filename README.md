@@ -19,6 +19,8 @@ hotel-pricing-analysis/
 │
 ├── data/
 │   ├── raw.csv
+│   ├── daily_yoy.csv
+│   ├── Feb2015.csv
 │   ├── FebComplete.csv
 │   └── Weekday.csv
 │
