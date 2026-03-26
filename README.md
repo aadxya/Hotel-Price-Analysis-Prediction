@@ -101,11 +101,10 @@ Used **Facebook Prophet** for time-series forecasting:
 * Custom monthly seasonality
 * Holiday effects (e.g., Valentine's Day, peak demand periods)
 
-
 <img width="1190" height="590" alt="Q3_Model_Prediction" src="https://github.com/user-attachments/assets/39650c41-2066-4e8b-95d0-559c74b78449" />
 
 
 ---
-
+# THANKYOU :)
 ---
 
