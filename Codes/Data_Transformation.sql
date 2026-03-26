@@ -1,6 +1,17 @@
-------------------------------------------------- QUESTION 1 ----------------------------------------------------
+----------------------------- DATA VALIDATION AND PREPROCESSING ---------------------------------------------------
 -- HOW MUCH DATA DO WE HAVE?
 select count(*) from price_data; --1467
+
+
+-- DUPLICATES CHECK -- NO DUPLICATES
+select date, count(*)
+from price_data
+group by 1
+having count(*) > 1;
+
+--- NULL DATA? --- No null data found
+select count(*) from price_data
+where price is null;
 
 -- HOW MUCH DATA PER YEAR?
 select year(date) as year, count(*) 
@@ -8,11 +19,6 @@ from price_data
 where price is not null 
 group by 1  
 order by 1; 
-
-
---- NULL DATA? --- No null data found
-select count(*) from price_data
-where price is null;
 
 
 -- Quick sanity check on the raw table
@@ -29,8 +35,6 @@ from price_data;
 
 --------- ONLY 2016 HAS LESS DATA SO WE WON'T TAKE IT INTO CONSIDERATION 
 --------- Created a new table "CLEAN_PRICES" with 2012 - 2015 data
-
--------- RAW.CSV
 CREATE OR replace VIEW clean_prices AS
 (
     select * from 
@@ -51,6 +55,9 @@ CREATE OR replace VIEW clean_prices AS
 select * from clean_prices;
 
 
+------------------------------------------------- QUESTION 1 ----------------------------------------------------
+
+
 -----------------------------------YoY DAY OF YEAR VIEW ---------------------------
 create or replace view yoy as
 select 
@@ -59,14 +66,29 @@ select
     order by 1,2
 ;
 
-
--------------------------- DAILY_YOY.CSV
 select * from yoy;
 
 select year, avg(average_price) from yoy group by 1 order by year;
 
 
------------------ WEEKDAY.CSV
+-----------------------------------MoM VIEW ---------------------------
+create or replace view mom as(
+select 
+    year, month, 
+    round(avg(price),2) as average_price,
+    max(price) as maximum_price,
+    min(price) as minimum_price
+    from clean_prices
+    group by 1,2
+    order by 1,2
+);
+
+
+select * from mom;
+
+
+
+----------------- WEEKLY 
 Select year, 
 case 
     when weekday =0 then 'Monday'
@@ -91,7 +113,6 @@ from
 --------------------------------------------- QUESTION 3 --------------------------------------------------
 
 -------------------- FEB GROWTH QUERY---------------
-
 create or replace view feb_growth as
 select year, 
 round(avg(ifnull((average_price - prev_price)*100/average_price, 0)), 2) as average_growth
@@ -116,19 +137,7 @@ order by 1;
 
 select * from feb_growth;
 
----------- FEB2015.CSV
-select date,price
-from
-(select *, year(date) as year,
-month(date) as month
-from price_data )
-where year = 2015
-and month = 2
-order by 1,2;
-
-
-
----------- FEBCOMPLETE.CSV
+---------- TOTAL FEB DATA
 select date,price
 from
 (select *, year(date) as year,
