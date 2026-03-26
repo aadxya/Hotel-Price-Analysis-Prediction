@@ -47,6 +47,9 @@ hotel-pricing-analysis/
 * Overlaid yearly price trends for direct comparison
 * Used smoothing (rolling average) for better visualization
 
+<img width="1589" height="590" alt="Q1_YoY_Seasonal_Pattern" src="https://github.com/user-attachments/assets/678e3e8d-2b57-4231-8527-ac7778448e01" />
+<img width="1189" height="590" alt="Q1_Week_on_Week_pattern" src="https://github.com/user-attachments/assets/56a6151f-c1cf-494d-9ac2-dc57f7a5b7d1" />
+
 ---
 
 ##  Q2: Outlier Detection
@@ -56,6 +59,10 @@ hotel-pricing-analysis/
 * Used **boxplots** for visual analysis
 * Applied **IQR-based outlier detection (2.5× IQR)** to reduce false positives
 * Performed detection **year-wise** to avoid cross-year bias
+
+<img width="1589" height="590" alt="Q2_Full_Dataset_Outliers" src="https://github.com/user-attachments/assets/aa5e6a0e-7af6-480a-aac3-8e60027686f0" />
+<img width="1589" height="590" alt="Q2_Year_wise_Outliers" src="https://github.com/user-attachments/assets/7e0ff920-c65f-4494-b1a2-797e4ba90c57" />
+
 
 ### Insight
 
@@ -83,6 +90,10 @@ hotel-pricing-analysis/
 * Rigid assumptions
 * Limited adaptability
 
+
+<img width="1389" height="690" alt="Q3_Heuristic_Prediction" src="https://github.com/user-attachments/assets/a15efcc1-cc78-4385-99eb-4c9aed2e3e9d" />
+
+
 ---
 
 ### Approach 2: Prophet Model
@@ -105,6 +116,9 @@ Used **Facebook Prophet** for time-series forecasting:
 * Prophet captures overall trends effectively
 * Predictions are **smooth**, as the model prioritizes general patterns over noise
 * Sharp spikes are not fully captured due to model regularization
+
+<img width="1190" height="590" alt="Q3_Model_Prediction" src="https://github.com/user-attachments/assets/39650c41-2066-4e8b-95d0-559c74b78449" />
+
 
 ---
 
