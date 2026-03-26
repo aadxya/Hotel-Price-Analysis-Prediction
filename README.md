@@ -1,6 +1,6 @@
 # Hotel Pricing Analysis & Forecasting
 
-## 📌 Overview
+## Overview
 
 This project analyzes hotel pricing data from **2012–2015** to understand pricing behavior and build a forecasting model. The goal is to:
 
@@ -8,7 +8,6 @@ This project analyzes hotel pricing data from **2012–2015** to understand pric
 * Detect **outliers in pricing data**
 * Forecast **daily hotel prices for February 2022**
 
-The approach focuses on **interpretable analysis and practical insights**, reflecting real-world pricing systems.
 
 ## Dataset Preparation
 
@@ -87,16 +86,6 @@ hotel-pricing-analysis/
   * Inflation
   * COVID impact
 
-**Pros:**
-
-* Interpretable
-* Incorporates domain knowledge
-
-**Cons:**
-
-* Rigid assumptions
-* Limited adaptability
-
 
 <img width="1389" height="690" alt="Q3_Heuristic_Prediction" src="https://github.com/user-attachments/assets/a15efcc1-cc78-4385-99eb-4c9aed2e3e9d" />
 
@@ -112,34 +101,11 @@ Used **Facebook Prophet** for time-series forecasting:
 * Custom monthly seasonality
 * Holiday effects (e.g., Valentine's Day, peak demand periods)
 
-### Model Tuning
-
-* Added **holiday effects** to capture event-driven demand spikes
-* Introduced **monthly seasonality** to capture intra-month variations
-* Explored **logistic growth** to reflect bounded pricing behavior
-
-### Observations
-
-* Prophet captures overall trends effectively
-* Predictions are **smooth**, as the model prioritizes general patterns over noise
-* Sharp spikes are not fully captured due to model regularization
 
 <img width="1190" height="590" alt="Q3_Model_Prediction" src="https://github.com/user-attachments/assets/39650c41-2066-4e8b-95d0-559c74b78449" />
 
 
 ---
-
-
-## 🚀 Future Improvements
-
-* Incorporate external data:
-
-  * Holidays
-  * Local events
-  * Occupancy rates
-* Use **residual-based anomaly detection**
-* Perform **backtesting** for model validation
-* Combine **statistical models with domain knowledge**
 
 ---
 
